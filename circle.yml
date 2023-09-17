@@ -10,8 +10,8 @@ dependencies:
         - go get golang.org/x/tools/cmd/cover
     override:
         - cd ..
-        - rm -rf /home/ubuntu/.go_workspace/src/github.com/griesbacher/nagflux
-        - rm -rf /home/ubuntu/.go_project/src/github.com/griesbacher/nagflux
+        - rm -rf /home/ubuntu/.go_workspace/src/github.com/fco150/nagflux
+        - rm -rf /home/ubuntu/.go_project/src/github.com/fco159/nagflux
         - go get -u -t github.com/fco159/nagflux; echo 1
         - go build -v github.com/fco159/nagflux
         - cp nagflux $CIRCLE_ARTIFACTS
