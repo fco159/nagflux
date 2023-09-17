@@ -3,18 +3,18 @@ package main
 import (
 	"flag"
 	"fmt"
-	"github.com/griesbacher/nagflux/collector"
-	"github.com/griesbacher/nagflux/collector/livestatus"
-	"github.com/griesbacher/nagflux/collector/modGearman"
-	"github.com/griesbacher/nagflux/collector/nagflux"
-	"github.com/griesbacher/nagflux/collector/spoolfile"
-	"github.com/griesbacher/nagflux/config"
-	"github.com/griesbacher/nagflux/data"
-	"github.com/griesbacher/nagflux/logging"
-	"github.com/griesbacher/nagflux/statistics"
-	"github.com/griesbacher/nagflux/target/elasticsearch"
-	"github.com/griesbacher/nagflux/target/file/json"
-	"github.com/griesbacher/nagflux/target/influx"
+	"github.com/fco159/nagflux/collector"
+	"github.com/fco159/nagflux/collector/livestatus"
+	"github.com/fco159/nagflux/collector/modGearman"
+	"github.com/fco159/nagflux/collector/nagflux"
+	"github.com/fco159/nagflux/collector/spoolfile"
+	"github.com/fco159/nagflux/config"
+	"github.com/fco159/nagflux/data"
+	"github.com/fco159/nagflux/logging"
+	"github.com/fco159/nagflux/statistics"
+	"github.com/fco159/nagflux/target/elasticsearch"
+	"github.com/fco159/nagflux/target/file/json"
+	"github.com/fco159/nagflux/target/influx"
 	"github.com/kdar/factorlog"
 	"os"
 	"os/signal"
@@ -41,12 +41,12 @@ func main() {
 	var configPath string
 	var printver bool
 	flag.Usage = func() {
-		fmt.Println(`Nagflux by Philip Griesbacher`, nagfluxVersion, `
+		fmt.Println(`Nagflux by Philip fco159`, nagfluxVersion, `
 Commandline Parameter:
 -configPath Path to the config file. If no file path is given the default is ./config.gcfg.
 -V Print version and exit
 
-For further informations / bugs reportes: https://github.com/Griesbacher/nagflux
+For further informations / bugs reportes: https://github.com/fco159/nagflux
 `)
 	}
 	flag.StringVar(&configPath, "configPath", "config.gcfg", "path to the config file")
