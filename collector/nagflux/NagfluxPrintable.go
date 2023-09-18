@@ -2,8 +2,8 @@ package nagflux
 
 import (
 	"fmt"
-	"github.com/griesbacher/nagflux/collector"
-	"github.com/griesbacher/nagflux/helper"
+	"github.com/fco159/nagflux/collector"
+	"github.com/fco159/nagflux/helper"
 )
 
 //Printable converts from nagfluxfile format to X
