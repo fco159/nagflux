@@ -280,7 +280,7 @@ var TestPerformanceData = []struct {
 		}},
 	},
 	{
-		//github https://github.com/Griesbacher/nagflux/issues/32
+		//github https://github.com/fco159/nagflux/issues/32
 		"DATATYPE::SERVICEPERFDATA	TIMET::1490957788	HOSTNAME::müü	SERVICEDESC::möö	SERVICEPERFDATA::getItinerary_min=34385µs getItinerary_avg=130925µs getItinerary_max=267719µs	SERVICECHECKCOMMAND::check_perfs	SERVICESTATE::0	SERVICESTATETYPE::1",
 		[]PerformanceData{{
 			Hostname:         "müü",
