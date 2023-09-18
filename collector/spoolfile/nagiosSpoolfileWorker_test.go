@@ -255,7 +255,7 @@ var TestPerformanceData = []struct {
 			Filterable:       collector.Filterable{Filter: "foo"},
 		}},
 	}, {
-		//github https://github.com/Griesbacher/nagflux/issues/19#issuecomment-286799167
+		//github https://github.com/fco159/nagflux/issues/19#issuecomment-286799167
 		"DATATYPE::SERVICEPERFDATA	TIMET::1489572014	HOSTNAME::HOST_SERVER	SERVICEDESC::web	SERVICEPERFDATA::time=0,004118s;;;0,000000 size=128766B;;;0	SERVICECHECKCOMMAND::check_http!HOST_SERVER!80!/!20	HOSTSTATE::UP	HOSTSTATETYPE::HARD SERVICESTATE::OK	SERVICESTATETYPE::HARD	SERVICEOUTPUT::HTTP OK: HTTP/1.1 200 OK - 128766 bytes in 0,004 second response time",
 		[]PerformanceData{{
 			Hostname:         "HOST_SERVER",
