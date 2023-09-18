@@ -2,8 +2,8 @@ package statistics
 
 import (
 	"fmt"
-	"github.com/griesbacher/nagflux/collector"
-	"github.com/griesbacher/nagflux/logging"
+	"github.com/fco159/nagflux/collector"
+	"github.com/fco159/nagflux/logging"
 	//"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/tree/main/prometheus/promhttp"
 	"net"
