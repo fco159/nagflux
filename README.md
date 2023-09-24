@@ -1,10 +1,10 @@
-[![GoDoc](https://godoc.org/github.com/Griesbacher/nagflux?status.svg)](https://godoc.org/github.com/Griesbacher/nagflux)
-[![Go Report Card](http://goreportcard.com/badge/Griesbacher/nagflux)](http:/goreportcard.com/report/Griesbacher/nagflux)
-[![Circle CI](https://circleci.com/gh/Griesbacher/nagflux/tree/master.svg?style=svg)](https://circleci.com/gh/Griesbacher/nagflux/tree/master)
-[![Coverage Status](https://coveralls.io/repos/Griesbacher/nagflux/badge.svg?branch=master&service=github)](https://coveralls.io/github/Griesbacher/nagflux?branch=master)
+[![GoDoc](https://godoc.org/github.com/fco159/nagflux?status.svg)](https://godoc.org/github.com/fco159/nagflux)
+[![Go Report Card](http://goreportcard.com/badge/fco159/nagflux)](http:/goreportcard.com/report/fco159/nagflux)
+[![Circle CI](https://circleci.com/gh/fco159/nagflux/tree/master.svg?style=svg)](https://circleci.com/gh/fco159/nagflux/tree/master)
+[![Coverage Status](https://coveralls.io/repos/fco159/nagflux/badge.svg?branch=master&service=github)](https://coveralls.io/github/fco159/nagflux?branch=master)
 # Nagflux
 #### A connector which transforms performancedata from Nagios/Icinga(2)/Naemon to InfluxDB/Elasticsearch
-Nagflux collects data from the NagiosSpoolfileFolder and adds informations from Livestatus. This data is sent to an InfluxDB, to get displayed by Grafana. Therefor is the tool [Histou](https://github.com/Griesbacher/histou) gives you the possibility to add Templates to Grafana.
+Nagflux collects data from the NagiosSpoolfileFolder and adds informations from Livestatus. This data is sent to an InfluxDB, to get displayed by Grafana. Therefor is the tool [Histou](https://github.com/fco159/histou) gives you the possibility to add Templates to Grafana.
 <p>Nagflux can be seen as the process_perfdata.pl script from PNP4Nagios.</p>
 
 ## Dependencies
@@ -15,10 +15,10 @@ Golang 1.5+
 
 ## Install
 ```
-go get -u github.com/griesbacher/nagflux
-go build github.com/griesbacher/nagflux
+go get -u github.com/fco159/nagflux
+go build github.com/fco159/nagflux
 ```
-A x86-64 Linux binary will be added to the releases. Here the link to the latest [Release](https://github.com/Griesbacher/nagflux/releases/latest).
+A x86-64 Linux binary will be added to the releases. Here the link to the latest [Release](https://github.com/fco159/nagflux/releases/latest).
 
 ## Configure
 Here are some of the important config-options:
@@ -51,7 +51,7 @@ else:
 - If the Livestatus is not available Nagflux will just write an log entry, but additional informations can't be gathered.
 - If any part of the Tablename is not valid for the InfluxDB an log entry will written and the data is writen to a file which has the same name as the logfile just with the ending '.dump-errors'. You could fix the errors by hand and copy the lines in the NagfluxSpoolfileFolder
 - If the Data can't be send to the InfluxDB, Nagflux will also write them in the '.dump-errors' file, you can handle them the same way.
-- If the logs are showing files are being read (in DEBUG mode) but nothing is going into InfluxDB, check the perfdata template to ensure it matches OMD format. See [Perfdata Template](https://github.com/Griesbacher/nagflux#perfdata-template) for more details.
+- If the logs are showing files are being read (in DEBUG mode) but nothing is going into InfluxDB, check the perfdata template to ensure it matches OMD format. See [Perfdata Template](https://github.com/fco159/nagflux#perfdata-template) for more details.
 
 ## Dataflow
 There are basically two ways for Nagflux to receive data:
@@ -65,7 +65,7 @@ Targets can be:
 - Elasticsearch, more a prove of concept but it worked some time ago ;)
 - JSON, to parse the data by an third tool. 
 
-![Dataflow Image](https://raw.githubusercontent.com/Griesbacher/nagflux/master/doc/NagfluxDataflow.png "Nagflux Dataflow")
+![Dataflow Image](https://raw.githubusercontent.com/fco159/nagflux/master/doc/NagfluxDataflow.png "Nagflux Dataflow")
 
 ## OMD
 Nagflux is fully integrated in [OMD-Labs](https://github.com/ConSol/omd), as well as Histou is. Therefor if you wanna try it out, it's maybe easier to install OMD-Labs.
@@ -86,8 +86,8 @@ DATATYPE::SERVICEPERFDATA\tTIMET::$TIMET$\tHOSTNAME::$HOSTNAME$\tSERVICEDESC::$S
 If you are using Nagios the default templates will not work. Use the above templates with config `host_perfdata_file_template` and `service_perfdata_file_template`, respectively.
 
 ## DEMO
-This Dockercontainer contains OMD and everything is preconfigured to use Nagflux/Histou/Grafana/InfluxDB: https://github.com/Griesbacher/docker-omd-grafana
+This Dockercontainer contains OMD and everything is preconfigured to use Nagflux/Histou/Grafana/InfluxDB: https://github.com/fco159/docker-omd-grafana
 
 ## Presentations
-- Here is a presentation I held about Nagflux and Histou in 2016, only in German, sorry: [Slides](http://www.slideshare.net/PhilipGriesbacher/monitoring-workshop-kiel-2016-performancedaten-visualisierung-mit-grafana-influxdb)
-- That's the first one from 2015, also only in German. [Slides](https://www.netways.de/fileadmin/images/Events_Trainings/Events/OSMC/2015/Slides_2015/Grafana_meets_Monitoring_Vorstellung_einer_Komplettloesung-Philip_Griesbacher.pdf) - [Video](https://www.youtube.com/watch?v=rY6N2H0UCFQ)
+- Here is a presentation I held about Nagflux and Histou in 2016, only in German, sorry: [Slides](http://www.slideshare.net/Philipfco159/monitoring-workshop-kiel-2016-performancedaten-visualisierung-mit-grafana-influxdb)
+- That's the first one from 2015, also only in German. [Slides](https://www.netways.de/fileadmin/images/Events_Trainings/Events/OSMC/2015/Slides_2015/Grafana_meets_Monitoring_Vorstellung_einer_Komplettloesung-Philip_fco159.pdf) - [Video](https://www.youtube.com/watch?v=rY6N2H0UCFQ)
