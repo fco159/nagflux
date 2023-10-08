@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"github.com/fco159/nagflux/collector"
 	"github.com/fco159/nagflux/logging"
-	"github.com/prometheus/client_golang/prometheus"
-	//"github.com/prometheus/client_golang/tree/main/prometheus/promhttp"
+	//"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"net"
 	"net/http"
 	"sync"
@@ -107,8 +107,8 @@ func NewPrometheusServer(address string) PrometheusServer {
 	pMutex.Unlock()
 	if address != "" {
 		go func() {
-			//http.Handle("/metrics", promhttp.Handler())
-			http.Handle("/metrics", prometheus.Handler())
+			http.Handle("/metrics", promhttp.Handler())
+			//http.Handle("/metrics", prometheus.Handler())
 			if err := http.ListenAndServe(address, nil); err != nil {
 				logging.GetLogger().Warn(err.Error())
 			}
