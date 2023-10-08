@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/fco159/nagflux/collector"
 	"github.com/fco159/nagflux/logging"
-	//"github.com/prometheus/client_golang/prometheus"
+	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	"net"
 	"net/http"
